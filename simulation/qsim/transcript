@@ -1,0 +1,38 @@
+# do new_miner.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:01:30 on Apr 23,2018
+# vlog -work work new_miner.vo 
+# -- Compiling module new_miner
+# 
+# Top level modules:
+# 	new_miner
+# End time: 16:01:31 on Apr 23,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:01:31 on Apr 23,2018
+# vlog -work work Waveform_block.vwf.vt 
+# -- Compiling module new_miner_vlg_sample_tst
+# -- Compiling module new_miner_vlg_check_tst
+# -- Compiling module new_miner_vlg_vec_tst
+# 
+# Top level modules:
+# 	new_miner_vlg_vec_tst
+# End time: 16:01:31 on Apr 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -c -do "new_miner.do" 
+# Start time: 16:01:31 on Apr 23,2018
+# Loading work.new_miner_vlg_vec_tst
+# Loading work.new_miner
+# Loading altera_ver.dffeas
+# Loading work.new_miner_vlg_sample_tst
+# Loading work.new_miner_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Warning: Design size of 20386 statements exceeds ModelSim Altera Starter recommended capacity.
+# Expect performance to be adversely affected.
+# Simulation passed !
+# ** Note: $finish    : Waveform_block.vwf.vt(4752)
+#    Time: 5 us  Iteration: 0  Instance: /new_miner_vlg_vec_tst/tb_out
+# End time: 16:02:00 on Apr 23,2018, Elapsed time: 0:00:29
+# Errors: 0, Warnings: 1

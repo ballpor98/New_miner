@@ -1,0 +1,20 @@
+
+State Machine - |new_miner|state
+Name state.101 state.100 state.011 state.010 state.001 state.000 
+state.000 0 0 0 0 0 0 
+state.001 0 0 0 0 1 1 
+state.010 0 0 0 1 0 1 
+state.011 0 0 1 0 0 1 
+state.100 0 1 0 0 0 1 
+state.101 1 0 0 0 0 1 
+
+State Machine - |new_miner|sha256_stream:U1|sha256_core:core|sha256_ctrl_reg
+Name sha256_ctrl_reg.CTRL_IDLE sha256_ctrl_reg.CTRL_DONE sha256_ctrl_reg.CTRL_ROUNDS 
+sha256_ctrl_reg.CTRL_IDLE 0 0 0 
+sha256_ctrl_reg.CTRL_ROUNDS 1 0 1 
+sha256_ctrl_reg.CTRL_DONE 1 1 0 
+
+State Machine - |new_miner|sha256_stream:U1|sha256_core:core|sha256_w_mem:w_mem_inst|sha256_w_mem_ctrl_reg
+Name sha256_w_mem_ctrl_reg.CTRL_UPDATE 
+sha256_w_mem_ctrl_reg.CTRL_IDLE 0 
+sha256_w_mem_ctrl_reg.CTRL_UPDATE 1 

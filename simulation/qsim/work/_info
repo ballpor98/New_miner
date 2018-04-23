@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ballpor98/Desktop/project/Hardware/New_miner/simulation/qsim
+vnew_miner
+Z1 !s110 1524474091
+!i10b 1
+!s100 M9>Uec2hViO0lY^];oAS83
+IIG5>UoHR_`jCPJ7QFQ9Ol1
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1524474089
+8new_miner.vo
+Fnew_miner.vo
+L0 32
+Z3 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1524474090.608000
+!s107 new_miner.vo|
+!s90 -work|work|new_miner.vo|
+!i113 1
+Z4 o-work work
+vnew_miner_vlg_check_tst
+R1
+!i10b 1
+!s100 NIa?:gNK=QZE3=LPGTQN_1
+I6YRfZDCRCSaGR01gIRPSU3
+R2
+R0
+Z5 w1524474087
+Z6 8Waveform_block.vwf.vt
+Z7 FWaveform_block.vwf.vt
+L0 72
+R3
+r1
+!s85 0
+31
+Z8 !s108 1524474091.202000
+Z9 !s107 Waveform_block.vwf.vt|
+Z10 !s90 -work|work|Waveform_block.vwf.vt|
+!i113 1
+R4
+vnew_miner_vlg_sample_tst
+R1
+!i10b 1
+!s100 AJCMb@aARS;n00`Q;0D1T0
+IbnODC4S5M86ljl9j^9@M30
+R2
+R0
+R5
+R6
+R7
+L0 30
+R3
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R4
+vnew_miner_vlg_vec_tst
+R1
+!i10b 1
+!s100 DYhRIK7DJ@_n=]4?Ki<Bn3
+I7P57N<Z]i:a1nNm26C`HM3
+R2
+R0
+R5
+R6
+R7
+L0 4756
+R3
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R4

@@ -1,0 +1,46 @@
+module new_miner (clock, resetn, writedata, readdata, write, read,byteenable, chipselect, Q_export,
+	writedata2, readdata2, write2, read2, byteenable2, chipselect2,Q_export2);
+	// signals for connecting to the Avalon fabric
+	input clock, resetn, read, write, chipselect;
+	input byteenable;
+	input [7:0] writedata;
+	output [7:0] readdata;
+	//2
+	input read2, write2, chipselect2;
+	input [63:0] byteenable2;
+	input [511:0] writedata2;
+	output [511:0] readdata2;
+	output [511:0] Q_export2;
+	wire [63:0] local_byteenable2;
+	wire [511:0] to_reg2, from_reg2;
+	assign to_reg2 = writedata2;
+	//assign local_byteenable2 = (chipselect2 & write2) ? byteenable2 : 64'd0;
+	// signal for exporting register contents outside of the embedded system
+	output [7:0] Q_export;
+	wire mode,last,valid_i,valid_o,ready,reset;
+	assign mode = 1'd1;
+	//assign last = writedata[6];
+	//assign valid_i = writedata[7];
+	
+	gen V1(.clk(clock), .signal_in(writedata[7]), .signal_out(valid_i));
+	gen L1(.clk(clock), .signal_in(writedata[6]), .signal_out(last));
+	gen R1(.clk(clock), .signal_in(writedata[5]), .signal_out(reset));
+	
+	sha256_stream U1
+  (.clk(clock),
+   .rst(!reset),
+   .mode(mode),
+   .s_tdata_i(to_reg2),
+   .s_tlast_i(last),
+   .s_tvalid_i(valid_i),
+   .s_tready_o(ready),
+   .digest_o(from_reg2),
+  .digest_valid_o(valid_o));
+  
+	assign readdata = {valid_i,last,reset,1'd0,valid_i,last,valid_o,ready};
+	assign Q_export = {valid_i,last,reset,1'd0,valid_i,last,valid_o,ready};
+	//assign Q_export = {writedata[7],writedata[6],writedata[5],resetn&!reset,valid_i,last,reset,resetn&!reset};
+	//2
+	assign readdata2 = from_reg2;
+	assign Q_export2 = from_reg2;
+endmodule
