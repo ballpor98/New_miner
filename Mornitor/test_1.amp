@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><altera_monitor_program_project version="1.0">
+    <architecture>Nios II</architecture>
+    <system>
+        <system_info filepath="true">../deca_top.sopcinfo</system_info>
+        <system_sof filepath="true">../output_files/new_miner.sof</system_sof>
+        <system_jdi filepath="true"/>
+        <cable>Arrow MAX 10 DECA [USB-1]</cable>
+        <processor>nios2_qsys</processor>
+        <reset_processor_during_load>false</reset_processor_during_load>
+        <terminal>jtag_uart</terminal>
+    </system>
+    <program>
+        <type>No Program</type>
+    </program>
+</altera_monitor_program_project>

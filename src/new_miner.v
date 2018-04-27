@@ -1,8 +1,12 @@
-module new_miner (clock, resetn, version_in, prev_in, root_in, time_in, target, nonce, hash_out);
+//module new_miner (clock, resetn, version_in, prev_in, root_in, time_in, target, nonce, hash_out);
+module new_miner (clock, resetn, hash_out);
 	input clock, resetn;
-	input [255:0] prev_in, root_in;
-	input [31:0] version_in,time_in, target, nonce;
+	//input [255:0] prev_in, root_in;
+	//input [31:0] version_in,time_in, target, nonce;
 	output reg [255:0] hash_out;
+	reg [255:0] prev_in, root_in;
+	reg [31:0] version_in,time_in, target, nonce;
+	//reg [255:0] hash_out;
 	
 	localparam mode = 1; // sha256 mode
 	wire [255:0] hash;
@@ -79,6 +83,12 @@ module new_miner (clock, resetn, version_in, prev_in, root_in, time_in, target, 
   begin
 	if(~resetn)
 		begin
+			prev_in <= 256'h81CD02AB7E569E8BCD9317E2FE99F2DE44D49AB2B8851BA4A308000000000000;
+			root_in <= 256'hE320B6C2FFFC8D750423DB8B1EB942AE710E951ED797F7AFFC8892B0F1FC122B;
+			version_in <= 32'h01000000;
+			time_in <= 32'hC7F5D74D;
+			target <= 32'hF2B9441A;
+			nonce <= 32'h42A14695;
 			state <= 3'b000;
 		end
 		case(state)
